@@ -1,3 +1,6 @@
+//this is a shoping cart project using javascript
+//Note: If you don't have a mature/solid knowledge about function in JavaScript you may not understand all the things clearly
+
 let plusBtn = document.getElementById('plusBtn');
 let minusBtn = document.getElementById('minusBtn');
 
@@ -32,10 +35,10 @@ function subtotalCalc(phonePrice,coverPrice, addOrDeductNumber ){
 	console.log(updateSubtotal)
 }
 // function for mobile and mobile cover plus button
-function mobiltAndCoverPlusBtnFunc(countId, priceId, individualPrice, remainId){
+function allPlusMinusBtnFunc(countId,posOrNegOne, priceId, individualPrice, remainId){
 	//calc counter
 	let count = document.getElementById(countId).value;
-	countCounterValue(count, 1, countId);
+	countCounterValue(count, posOrNegOne, countId);
 
 	//calc price
 	let price = document.getElementById(priceId).innerHTML;
@@ -48,8 +51,9 @@ function mobiltAndCoverPlusBtnFunc(countId, priceId, individualPrice, remainId){
 
 //plus button funtion
 function plusBtnFunc(){
-	mobiltAndCoverPlusBtnFunc('phoneCount', 'phonePrice', 1219, 'coverPrice')
+	allPlusMinusBtnFunc('phoneCount',1 ,'phonePrice', 1219, 'coverPrice')
 
+	//without using allPlusMinusBtnFunc function
 	/*//phone count
 	let phoneCount = document.getElementById('phoneCount').value;
 	countCounterValue(phoneCount, 1, 'phoneCount')
@@ -66,22 +70,23 @@ function plusBtnFunc(){
 
 //cover plus button function
 function coverPlusBtnFunc(){
-	mobiltAndCoverPlusBtnFunc('coverCount', 'coverPrice', 59, 'phonePrice')
+	allPlusMinusBtnFunc('coverCount',1 ,'coverPrice', 59, 'phonePrice')
 
-	// let coverCount = document.getElementById('coverCount').value;
+	//without using allPlusMinusBtnFunc function
+	/*let coverCount = document.getElementById('coverCount').value;
 
-	// // cover counter
-	// countCounterValue(coverCount, 1, 'coverCount');
+	// cover counter
+	countCounterValue(coverCount, 1, 'coverCount');
 
-	// //cover price 
-	// let coverPrice = document.getElementById('coverPrice').innerHTML;
-	// countPrice(coverPrice, 59, 'coverPrice');
+	//cover price 
+	let coverPrice = document.getElementById('coverPrice').innerHTML;
+	countPrice(coverPrice, 59, 'coverPrice');
 
-	// //subtotal
+	//subtotal
 	
-	// let phonePrice = document.getElementById('phonePrice').innerHTML;
+	let phonePrice = document.getElementById('phonePrice').innerHTML;
 
-	// subtotalCalc(phonePrice, coverPrice, 59)
+	subtotalCalc(phonePrice, coverPrice, 59)*/
 
 }
 
@@ -89,8 +94,10 @@ function coverPlusBtnFunc(){
 function minusBtnFunc(){
 	let phoneCount = document.getElementById('phoneCount').value;
 	if(phoneCount > 1){
+		allPlusMinusBtnFunc('phoneCount',-1 ,'phonePrice', -1219, 'coverPrice')
 
-		//phone counter
+		//without using allPlusMinusBtnFunc function
+		/*//phone counter
 		countCounterValue(phoneCount, -1, 'phoneCount')
 
 		//phone price
@@ -101,18 +108,20 @@ function minusBtnFunc(){
 		
 		let coverPrice = document.getElementById('coverPrice').innerHTML;
 
-		subtotalCalc(phonePrice, coverPrice, -1219)
+		subtotalCalc(phonePrice, coverPrice, -1219)*/
 	}
 }
 
-//phone cover calculation
+
 
 //cover minus button function
 function coverMinusBtnFunc(){
 	let coverCount = document.getElementById('coverCount').value;
 	if(coverCount > 1){
+		allPlusMinusBtnFunc('coverCount',-1 ,'coverPrice', -59, 'phonePrice')
 
-		//cover count
+		//without using allPlusMinusBtnFunc function
+		/*//cover count
 		countCounterValue(coverCount, -1, 'coverCount')
 
 		//cover price 
@@ -123,7 +132,7 @@ function coverMinusBtnFunc(){
 		
 		let phonePrice = document.getElementById('phonePrice').innerHTML;
 
-		subtotalCalc(phonePrice, coverPrice, -59)
+		subtotalCalc(phonePrice, coverPrice, -59)*/
 	}
 }
 
