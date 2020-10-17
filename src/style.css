@@ -1,10 +1,12 @@
 body{
 	background: #fff;
 }
+.main{
+}
+
 .cart{
-	margin: 100px 0;
 	background-color: #F6F5FA;;
-	padding: 60px 0;
+	padding:10px 0 45px 0;
 }
 .total-price{
 	padding-bottom: 15px;
@@ -12,8 +14,8 @@ body{
 .cart-item{
 	background-color: #fff;
 	border-radius: 10px;
-	padding: 15px 20px;
-	margin-bottom: 20px;
+	padding: 12px 17px;
+	margin-bottom: 18px;
 }
 .center-item{
     display: flex;
@@ -21,7 +23,7 @@ body{
     justify-content: flex-start;
 }
 .cart-item img{
-	width: 115px;
+	width: 110px;
 }
 .cart-item h5{
     padding: 0 45px;
@@ -48,8 +50,73 @@ body{
 }
 .check-out{
     float: right;
-    padding: 10px 30px;
+    padding: 7px 20px;
 	font-size: 19px;
 	background-color: #2FBE70;
 	border: none;
+}
+#phoneRemove, #coverRemove{
+	cursor: pointer;
+}
+/*login page*/
+.loginpage{
+	width: 500px;
+	max-width: 80%;
+	box-shadow: 0 0 35px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.01);
+}
+#loginHeader{
+	display: flex;
+	padding: 15px 10px 10px 15px;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid black;
+
+}
+#loginHeader .loginTitle{
+	font-size: 20px;
+	font-weight: bold;
+}
+.closeBtn{
+	font-size: 1.55rem;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+.loginBody{
+	padding:10px 15px;
+}
+#buyer{
+	color: green;
+	font-size: 25px;
+	line-height: 32px
+}
+
+
+/*responsive*/
+@media (max-width: 500px){
+	.input-group input, .input-group button{
+		font-size: 16px;
+		margin-top: 10px;
+	}
+	.calculations{
+		padding: 15px 0;
+	}
+}
+@media (max-width: 350px){
+	.input-group{
+		width: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	
+
 }

@@ -13,13 +13,14 @@
 
 <body>
 
-   <section>
+   <section id="main" class="main">
       <div class="container">
-         <div class="cart my-5 mx-0">
+         <div class="cart my-0 mx-0">
+            <h4 class="text-center"> <span id="buyer"></span></h4>
             <div class="col-md-12 col-lg-10 mx-auto">
                <div class="cart-item">
                   <div class="row">
-                     <div class="col-md-7 center-item">
+                     <div class="col-md-7  center-item">
                         <img src="images/product-1.png" alt="">
                         <h5>iPhone 11 128GB Black</h5>
                      </div>
@@ -27,7 +28,7 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button id="minusBtn"  class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input id="phoneCount" type="text" class="form-control text-center" value="1">
+                           <input id="phoneCount" type="text" readonly class="form-control text-center" value="1">
                            <button id="plusBtn"  class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5>$<span id="phonePrice">1219</span></h5>
@@ -45,7 +46,7 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button id="coverMinusBtn" class="btn btn-default"><i  class="fas fa-minus"></i></button>
-                           <input id="coverCount" type="text" class="form-control text-center" value="1">
+                           <input id="coverCount" type="text" class="form-control text-center" readonly value="1">
                            <button id="coverPlusBtn" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
@@ -55,24 +56,24 @@
                   </div>
                </div>
 
-               <div class="cart-item">
-                  <div class="row">
+               <div class="cart-item calculations">
+                  <div class="row d-flex flex-md-row flex-row " >
 
-                     <div class="col-md-8">
+                     <div class="col-md-8 col-6 ">
                         <h5>Subtotal: </h5>
                         <h5>Tax:</h5>
                         <h5>Total:</h5>
                      </div>
 
-                     <div class="col-md-4 status">
+                     <div class="col-md-4 col-6 status">
                         <h5>$<span id="subtotal">1278</span></h5>
-                        <h5>$<span id="tax">0</span></h5>
-                        <h5>$<span id="total">1278</span></h5>
+                        <h5>$<span id="tax">5</span></h5>
+                        <h5>$<span id="total">1283</span></h5>
                      </div>
                   </div>
                </div>
-               <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               <div class="col-md-12 pt-2 pb-2">
+                  <button id="checkOut" type="button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
@@ -80,9 +81,31 @@
    </section>
 
 
+   <div  class="loginpage container " id="login">
+      <div id="loginHeader">
+         <div class="loginTitle">Login Account</div>
+         <button id="closeBtn" class="closeBtn">&times;</button>
+      </div>
+      
+      <div class="loginBody">
+         <label  for="Name">Name: </label>
+         <input id="nameInput" type="text" placeholder="Your Name" class="mb-4 form-control">
 
-   <!-- js -->
+         <label for="password">Password: </label>
+         <input id="passInput" type="password" placeholder="Your Password" class="mb-3 form-control">
+         <button  class="d-block w-100 mb-4 btn btn-success" id="buyBtn">Buy Products</button>
+      </div>
+
+
+   </div>
+
+
+
+
    <script src="src/script.js"></script>
+
+
+
 </body>
 
 </html>
